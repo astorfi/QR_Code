@@ -1,0 +1,14 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdftex 2015.5.2)  2 MAY 2015 14:23
+entering extended mode
+**C:/Users/AS/Desktop/UMD*final/report*-*Final/Thesis.cls
+("C:/Users/AS/Desktop/UMD final/report - Final/Thesis.cls"
+! Undefined control sequence.
+l.7 \NeedsTeXFormat
+                   {LaTeX2e}[1996/12/01]
+? 
+! Emergency stop.
+l.7 \NeedsTeXFormat
+                   {LaTeX2e}[1996/12/01]
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!
