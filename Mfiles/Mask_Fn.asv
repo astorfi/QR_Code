@@ -1,0 +1,88 @@
+function [ out ] = Mask_Fn( Image,Mask_pat_Num )
+global module
+referenceIm = false(module);
+referenceIm(1:8,1:8) = 1;       % left-upper corner
+referenceIm(module-7:module, 1:8) = 1;    % left-down corner
+referenceIm(1:8, module-7:module) = 1;    % right-upper corner
+referenceIm(module-8:module-4,module-8:module-4) = 1;   % small FIP
+ referenceIm(7,9:module-8) = 1;      % Horizontal Timing
+ referenceIm(9:module-8,7) = 1;      % Vertical Timing
+referenceIm(module-7,9) = 1;        % Dark module
+ % Format Information Area
+referenceIm(9,1:9) = 1;       
+referenceIm(1:9,9) = 1;
+referenceIm(9,module-7:module) = 1;
+referenceIm(module-7:module,9) = 1;
+Image(referenceIm) = nan;
+out = nan(size(Image,1),size(Image,2));
+%% masking
+switch Mask_pat_Num
+    case 0
+        for i=1:size(Image,1)
+            for j=1:size(Image,2)
+                if mod(i+j,2)==0
+                    out(i,j)= mod(Image(i,j)+1,2);
+                end
+            end
+        end
+    case 1
+        for i=1:size(Image,1)
+            for j=1:size(Image,2)
+                if mod(i+j,2)==0
+                    out(i,j)= mod(Image(i,j)+1,2);
+                end
+            end
+        end
+    case 2
+        for i=1:size(Image,1)
+            for j=1:size(Image,2)
+                if mod(i+j,2)==0
+                    out(i,j)= mod(Image(i,j)+1,2);
+                end
+            end
+        end
+    case 3
+        for i=1:size(Image,1)
+            for j=1:size(Image,2)
+                if mod(i+j,2)==0
+                    out(i,j)= mod(Image(i,j)+1,2);
+                end
+            end
+        end
+    case 4
+        for i=1:size(Image,1)
+            for j=1:size(Image,2)
+                if mod(i+j,2)==0
+                    out(i,j)= mod(Image(i,j)+1,2);
+                end
+            end
+        end
+    case 5
+        for i=1:size(Image,1)
+            for j=1:size(Image,2)
+                if mod(i+j,2)==0
+                    out(i,j)= mod(Image(i,j)+1,2);
+                end
+            end
+        end
+    case 6
+        for i=1:size(Image,1)
+            for j=1:size(Image,2)
+                if mod(mod(i*j,2)+mod(i*j,3),2)==0 && isnan()
+                    out(i,j)= isnan(mod(Image(i,j)+1,2));
+                end
+            end
+        end
+    case 7
+        for i=1:size(Image,1)
+            for j=1:size(Image,2)
+                if mod(i+j,2)==0
+                    out(i,j)= mod(Image(i,j)+1,2);
+                end
+            end
+        end        
+end
+        
+end
+
+

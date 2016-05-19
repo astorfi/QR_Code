@@ -1,0 +1,87 @@
+%%%%%%%%%% Amirsina Torfi ######################
+%%%%%%%%%%% University of Maryland, Colledge Park %%%%%%%%%%%%%%
+%%%%%%%%%% Digital Image and Video Processing %%%%%%%%%%%%%%%%%
+%%% function message = decode_ADVANCED_QR(QR)
+% Inputs :
+           % QR: Input is the QR exact matrix(for example which is 41by41 for version6)
+
+           
+% Outputs :
+           % message: decoded message of the QR-code
+           
+%%%% WARNING: This function contains many subfunction and is working for
+%%%% versions 1 to 6 & If you are not familiar with QR-code standards you
+%%%% need to first go through that and learn the flowchart and procedure
+%%%% otherwise it is hard to understand the script....
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+function message = decode_ADVANCED_QR(QR)
+global module
+%% Considering function patterns and reserved areas and NAN(This part exclude function patterns which are not related to data)
+referenceIm = false(module);
+referenceIm(1:8,1:8) = 1;       % left-upper corner(finder patters)
+referenceIm(module-7:module, 1:8) = 1;    % left-down corner(finder patters)
+referenceIm(1:8, module-7:module) = 1;    % right-upper corner(finder patters)
+if module>21        % version 1 does not have alignment pattern
+referenceIm(module-8:module-4,module-8:module-4) = 1;   % Alignment Pattern
+end
+ referenceIm(7,9:module-8) = 1;      % Horizontal Timing
+ referenceIm(9:module-8,7) = 1;      % Vertical Timing
+referenceIm(module-7,9) = 1;        % Dark module
+Image1=QR;
+Image2=QR;
+% to read only the bits that stores information
+Image1(referenceIm) = NaN ;      % makes the fiducal mark NaN in the image
+
+%% Find Format String(The output is error correction level and the number of used mask pattern)
+[ Mask_pat_Num,Error_Recov_Type ]=Format_String_Im_Fn( Image1);
+[Mask_pattern]=Mask_Fn( Image1,Mask_pat_Num );      % Generating Mask
+
+%% Demasking Procedure
+referenceIm(9,1:9) = 1;     % Additionally, we need to eliminate format information area before extracting the relevent bits
+referenceIm(1:9,9) = 1;
+referenceIm(9,module-7:module) = 1;
+referenceIm(module-7:module,9) = 1;
+Image2(referenceIm) = nan;
+
+for i=1:size(Image2,1)
+    for j=1:size(Image2,2)
+        if ~isnan(Mask_pattern(i,j))
+            Image2(i,j) = Mask_pattern(i,j);        % demasking
+        end
+    end
+end
+Image_demask=Image2;     % Demasked image related to data bits, function patterns and reserved areas are still NaN
+
+%% Extracting bit stream
+str = bit_extract_Fn( Image_demask );       % Extract bit-stream related to QR-Matrix
+ if module>21
+     str = str(1,1:length(str)-7);    %in version 2 to 6 we always have 7 reminder bits in the end of stream. We eliminate them.
+ end
+ 
+ %% Conidering Reed-solomon
+Dec_Str=Bit_to_dec_Fn(str) ;        %We need decimal for reed solomon decoding
+[Dec_Str,Block_num,Data_codew_Perb_Num]=Stream_reorder_ADVANCED_Fn(Dec_Str,Error_Recov_Type,module);        % QR-standard interleave sequence in a specific pattern for...
+                                                                                                            ...any error correction level and any version (Refer to standards of QR code)
+Data_decode = Data_extr_dec_ADVANCED_Fn(Dec_Str,Error_Recov_Type,module,Block_num,Data_codew_Perb_Num);     % Decode the sequnce using Reedsolomon decoding
+Bin_Str=dec_to_bin_Fn(Data_decode);     % Extract exact binary matrix of decimal sequence( The command str2num(dec2bin(...)) does not work here because for example we need the )
+% size(Bin_Str)
+str=Bin_Str;
+
+
+
+
+%% This part does not consider Reed-Solomon Decoding
+str(1,1:4)
+Mode=Mode_Extr_Fn(str(1,1:4));      % Realizing the Mode
+Char_Size=Char_Num_Fn(str,Mode,Error_Recov_Type,module);
+%Char_Size=13
+Data_Related_stream=Data_Str_Ext_Fn(str,Char_Size,Mode,Error_Recov_Type,module);
+Num_get=DecNum_Get_Fn(Data_Related_stream,Mode);      % Extracting the decimal numbers related to Data
+message=Char_Get_Fn(Num_get,Char_Size,Mode);
+
+
+
+end

@@ -1,0 +1,21 @@
+clc
+close all
+global module
+%% Input dialog
+prompt = {'Please input the version:'};
+dlg_title = 'Version';
+num_lines = 1;
+def = {'3'};
+answer = inputdlg(prompt,dlg_title,num_lines,def);
+[version status] = str2num(answer{1})
+% Number of modules(version2=25 version3=29 version6=41,..., General formula=4*(Version Number)+1) 
+module=4*version+17;     
+tic     % Start the timing process
+I = imread('testimage/QR-5-H.jpg');
+%% Main part
+[Msg,QR] = GetPattern_message_Fn(I);
+%% Ploting the main image
+figure;
+imshow(I);
+title('Main Image')
+toc
