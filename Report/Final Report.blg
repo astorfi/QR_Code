@@ -1,0 +1,9 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Final Report.aux
+The style file: plain.bst
+Database file #1: Bibliography.bib
+You're missing a field name---line 11 of file Bibliography.bib
+ : 
+ : % Abstract = {Operating a laser diode in an extended cavity which provides frequency-selective feedback is a very effective method of reducing the laser's linewidth and improving its tunability. We have developed an extremely simple laser of this type, built from inexpensive commercial components with only a few minor modifications. A 780~nm laser built to this design has an output power of 80~mW, a linewidth of 350~kHz, and it has been continuously locked to a Doppler-free rubidium transition for several days.},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+(There was 1 error message)

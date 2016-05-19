@@ -1,0 +1,11 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdftex 2015.5.2)  2 MAY 2015 15:26
+entering extended mode
+**C:/Users/AS/Desktop/UMD*final/report*-*Final/Bibliography.bib
+("C:/Users/AS/Desktop/UMD final/report - Final/Bibliography.bib")
+*
+! Emergency stop.
+<*> ...p/UMD*final/report*-*Final/Bibliography.bib
+                                                  
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

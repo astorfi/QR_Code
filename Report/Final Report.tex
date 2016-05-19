@@ -1,0 +1,272 @@
+%% ----------------------------------------------------------------
+%% Thesis.tex -- MAIN FILE (the one that you compile with LaTeX)
+%% ---------------------------------------------------------------- 
+
+% Set up the document
+\documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
+\graphicspath{Figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
+\usepackage{graphicx}
+% Include any extra LaTeX packages required
+\usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
+\usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
+\usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
+\hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
+\usepackage{float}
+%\floatstyle{boxed} % Uncomment if you want a box around the figure
+\restylefloat{figure}
+\usepackage{natbib}
+\usepackage{url}
+%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+%%%%%%%%%%%%%%%%%%
+%\usepackage{subcaption}
+
+%% ----------------------------------------------------------------
+\begin{document}
+\frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
+
+% Set up the Title Page
+\title  {QR code Pattern Recognition and Decoding-based Information Extraction }
+\authors  {\texorpdfstring
+            {\href{amirsina.torfi@gmail.com}{Amirsina Torfi}}
+           {Author Name}
+            }
+\addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
+\date       {\today}
+\subject    {}
+\keywords   {}
+
+\maketitle
+%% ----------------------------------------------------------------
+
+\setstretch{1.3}  % It is better to have smaller font and larger line spacing than the other way round
+
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+\fancyhead{}  % Clears all page headers and footers
+\rhead{\thepage}  % Sets the right side header to show the page number
+\lhead{}  % Clears the left side page header
+
+\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
+
+%% ----------------------------------------------------------------
+% Declaration Page required for the Thesis, your institution may give you a different text to place here
+\Declaration{
+
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+
+I, Amirsina Torfi, declare that this project titled, `QR code Pattern Recognition and Decoding-based Information Extraction' and the work presented in it are my own. I confirm that:
+
+\begin{itemize} 
+\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while taking the Image Processing at University of Maryland in Spring-2015 semester.
+ 
+\item[\tiny{$\blacksquare$}] If any part of this project, whether algorithm or codes, has  been extracted from any website or other source codes, this has been clearly stated.
+ 
+ 
+\item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this project entirely my own work.
+ 
+\item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
+ 
+\item[\tiny{$\blacksquare$}] Where the project is based on work done by myself jointly with others or from another source, I have made clear exactly what was done by others and what I have contributed myself.
+\\
+\end{itemize}
+ 
+ 
+Signed:\\
+%\rule[1em]{25em}{0.5pt}  % This prints a line for the signature
+ Amirsina Torfi
+ 
+Date:\\
+15 May 2015  % This prints a line to write the date
+}
+\clearpage  % Declaration ended, now start a new page
+
+%% ----------------------------------------------------------------
+% The "Funny Quote Page"
+\pagestyle{empty}  % No headers or footers for the following pages
+
+\null\vfill
+% Now comes the "Funny Quote", written in italics
+\textit{``True words are not beautiful and beautiful words are not true.''}
+
+\begin{flushright}
+Lao Tzu
+\end{flushright}
+
+\vfill\vfill\vfill\vfill\vfill\vfill\null
+\clearpage  % Funny Quote page ended, start a new page
+%% ----------------------------------------------------------------
+
+% The Abstract Page
+\addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
+\abstract{
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+
+The goal of this project is to successfully detect and reconstruct perfect QR-code pattern and then decode and extract the message and information within. Usually the QR-code images are corrupted, Blurred or at least rotated which make the pattern recognition harder than simple scenarios. In this situation robust algorithms can effectively recognize specific patterns in the image and reconstruct the main matrix of quick response code.\\
+In the first part of this project the implemented software, which is developed using MATLAB, successfully recognize the main QR pattern and then extract the QR-Matrix. Then by using decoding techniques, the message is extracted from the QR-code. The QR-matrix might be corrupted, i.e. we probably lost some amount of information. According to this scenario, QR-codes are made by Error-Correction Coding which help us through the decoding process. In order to demonstration of precision and authentication of software, different test images have been tested.
+
+}
+
+\clearpage  % Abstract ended, start a new page
+%% ----------------------------------------------------------------
+
+\setstretch{1.3}  % Reset the line-spacing to 1.3 for body text (if it has changed)
+
+% The Acknowledgements page, for thanking everyone
+\acknowledgements{
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+
+This project could not have been performed without the assistance and guidance of several individuals. First and foremost, I would like to thank our course instructor, Professor Min Wu and her co-instructor Mr. Wong, for their valuable advises. I would also like to thank Mr. Rouzbeh A. Shirvani for helping me through the basic concepts in pattern recognition part which was very important to continue the procedure.
+
+}
+\clearpage  % End of the Acknowledgements
+%% ----------------------------------------------------------------
+
+\pagestyle{fancy}  %The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+
+
+%% ----------------------------------------------------------------
+\lhead{\emph{Contents}}  % Set the left side page header to "Contents"
+\tableofcontents  % Write out the Table of Contents
+
+%% ----------------------------------------------------------------
+\lhead{\emph{List of Figures}}  % Set the left side page header to "List if Figures"
+\listoffigures  % Write out the List of Figures
+
+%% ----------------------------------------------------------------
+\lhead{\emph{List of Tables}}  % Set the left side page header to "List of Tables"
+\listoftables  % Write out the List of Tables
+
+%% ----------------------------------------------------------------
+%\setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
+%\clearpage  % Start a new page
+%\lhead{\emph{Abbreviations}}  % Set the left side page header to "Abbreviations"
+%\listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
+%{
+%% \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
+%\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
+%
+%}
+
+%% ----------------------------------------------------------------
+%\clearpage  % Start a new page
+%\lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
+%\listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
+%{
+%% Constant Name & Symbol & = & Constant Value (with units) \\
+%Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
+
+%}
+
+%% ----------------------------------------------------------------
+%\clearpage  %Start a new page
+%\lhead{\emph{Symbols}}  % Set the left side page header to "Symbols"
+%\listofnomenclature{lll}  % Include a list of Symbols (a three column table)
+%{
+%% symbol & name & unit \\
+%$a$ & distance & m \\
+%$P$ & power & W (Js$^{-1}$) \\
+%& & \\ % Gap to separate the Roman symbols from the Greek
+%$\omega$ & angular frequency & rads$^{-1}$ \\
+%}
+%% ----------------------------------------------------------------
+% End of the pre-able, contents and lists of things
+% Begin the Dedication page
+
+%\setstretch{1.3}  % Return the line spacing back to 1.3
+%
+\pagestyle{empty}  % Page style needs to be empty for this page
+%\dedicatory{For/Dedicated to/To my\ldots}
+%
+%\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+
+
+%% ----------------------------------------------------------------
+\mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
+  % Return the page headers back to the "fancy" style
+\pagestyle{fancy}
+% Include the chapters of the thesis, as separate files
+% Just uncomment the lines as you write the chapters
+
+\lhead{\emph{Introduction}}
+\input{Chapters/Chapter1} % Introduction
+\clearpage
+
+\lhead{\emph{QR Code Structure}}
+\input{Chapters/Chapter2} % QR Code Structure
+\clearpage
+
+\lhead{\emph{Image Processing and Pattern Recognition}}
+\input{Chapters/Chapter3} % QR Code Structure
+\clearpage
+%\input{Chapters/Chapter3} % Experimental Setup
+
+\lhead{\emph{Decoding and Message Extraction}}
+\input{Chapters/Chapter4} % QR Code Structure
+\clearpage
+
+\lhead{\emph{Conclusion and Discussion}}
+\input{Chapters/Chapter5} % QR Code Structure
+\clearpage
+%\input{Chapters/Chapter4} % Experiment 1
+
+%\input{Chapters/Chapter5} % Experiment 2
+
+%\input{Chapters/Chapter6} % Results and Discussion
+
+%\input{Chapters/Chapter7} % Conclusion
+
+%% ----------------------------------------------------------------
+% Now begin the Appendices, including them as separate files
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+
+%\input{Appendices/AppendixA}	% Appendix Title
+
+%\input{Appendices/AppendixB} % Appendix Title
+
+%\input{Appendices/AppendixC} % Appendix Title
+
+\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+\backmatter
+
+%% ----------------------------------------------------------------
+
+
+
+
+
+
+\label{Bibliography}
+\lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
+\bibliographystyle{plain}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+%\bibliography{Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
+\begin{thebibliography}{9}
+
+\bibitem{1iso}
+ISO/IEC 18004. Information technology - Automatic identification and data capture
+techniques - QR code 2005 bar code symbology specification. \textit{International Standard}, (Second Edition), September 2006. URL \url{http://www.iso.org}.
+
+\bibitem{Thonky}
+qr-code-tutorial. URL \url{www.thonky.com/qr-code-tutorial}.
+
+\bibitem{WikiHomo}
+Wikipedia: Homography. URL \url{http://en.wikipedia.org/wiki/Projective_transformation}.
+
+\bibitem{StackPers}
+Stackoverflor: Perspective Transformation. URL \url{stackoverflow.com}.
+
+\end{thebibliography}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}  % The End
+%% ----------------------------------------------------------------

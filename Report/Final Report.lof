@@ -1,0 +1,29 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces QR symbol of version 7 \cite {1iso}\relax }}{4}{figure.15}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces QR symbol\cite {Thonky}\relax }}{14}{figure.37}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Finder Pattern\relax }}{14}{figure.39}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Separator\relax }}{15}{figure.41}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Alignment Pattern\relax }}{16}{figure.43}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Timing Patterns\relax }}{16}{figure.45}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Reserved Area\cite {Thonky}\relax }}{17}{figure.47}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces QR-Matrix Bit Allocating Pattern\cite {Thonky}\relax }}{18}{figure.49}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Upward bit allocating}}}{18}{figure.52}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Downward bit allocating}}}{18}{figure.52}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces The inner pattern for upward and downward bit allocation\cite {Thonky} \relax }}{18}{figure.52}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Format Information Data\cite {Thonky}\relax }}{20}{figure.58}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Row and Column scanning for FPs locating\relax }}{25}{figure.83}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Finder pattern recognition of a damaged image\relax }}{27}{figure.140}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Finder pattern recognition of QR-art\relax }}{28}{figure.141}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Finder pattern recognition of distorted image\relax }}{28}{figure.142}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Finding Alignment pattern\relax }}{30}{figure.172}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Critical point detection\relax }}{31}{figure.174}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Perspective Transformation\cite {StackPers}\relax }}{32}{figure.230}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Version-3 QR code recognition\relax }}{34}{figure.263}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Verion-2 QR code\relax }}{34}{figure.264}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces QR code recognition in a high resolution image\relax }}{35}{figure.265}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Message extraction of Version-2 and Version-3 \relax }}{40}{figure.302}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Version-5 QR code message extraction\relax }}{41}{figure.303}
+\addvspace {10\p@ }

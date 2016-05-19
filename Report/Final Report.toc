@@ -1,0 +1,65 @@
+\contentsline {chapter}{Declaration of Authorship}{i}{dummy.1}
+\vspace {1em}
+\contentsline {chapter}{Abstract}{iii}{dummy.2}
+\vspace {1em}
+\contentsline {chapter}{Acknowledgements}{iv}{dummy.3}
+\vspace {1em}
+\contentsline {chapter}{List of Figures}{vii}{dummy.5}
+\contentsline {chapter}{List of Tables}{viii}{dummy.7}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.9}
+\contentsline {section}{\numberline {1.1}Project Backgrounds}{1}{section.10}
+\contentsline {section}{\numberline {1.2}Considerations}{2}{section.11}
+\contentsline {section}{\numberline {1.3}Project Outlines}{2}{section.12}
+\contentsline {chapter}{\numberline {2}QR Code Structure and Generation}{3}{chapter.13}
+\contentsline {section}{\numberline {2.1}General structure}{3}{section.14}
+\contentsline {section}{\numberline {2.2}Function Patterns}{4}{section.16}
+\contentsline {subsection}{\numberline {2.2.1}Finder Patterns}{5}{subsection.17}
+\contentsline {subsection}{\numberline {2.2.2}Alignment Patterns}{5}{subsection.18}
+\contentsline {subsection}{\numberline {2.2.3}Timing Patterns}{5}{subsection.19}
+\contentsline {section}{\numberline {2.3}Encoding Region and Generating QR Symbol}{6}{section.20}
+\contentsline {subsection}{\numberline {2.3.1}Data and Information Analysis}{7}{subsection.21}
+\contentsline {subsubsection}{\numberline {2.3.1.1}How to Choose the Most Efficient Mode}{8}{subsubsection.22}
+\contentsline {subsection}{\numberline {2.3.2}Data Encoding}{8}{subsection.23}
+\contentsline {subsection}{\numberline {2.3.3}Error Correction Coding}{12}{subsection.33}
+\contentsline {subsection}{\numberline {2.3.4}Structure Final message}{13}{subsection.34}
+\contentsline {subsection}{\numberline {2.3.5}Module Placement in Matrix}{13}{subsection.35}
+\contentsline {subsubsection}{\numberline {2.3.5.1}Review of Function Patterns}{13}{subsubsection.36}
+\contentsline {subsubsection}{\numberline {2.3.5.2}Finder Patterns}{14}{subsubsection.38}
+\contentsline {subsubsection}{\numberline {2.3.5.3}Separators}{15}{subsubsection.40}
+\contentsline {subsubsection}{\numberline {2.3.5.4}Alignment Pattern}{15}{subsubsection.42}
+\contentsline {subsubsection}{\numberline {2.3.5.5}Timing Patterns}{16}{subsubsection.44}
+\contentsline {subsubsection}{\numberline {2.3.5.6}Dark Module and Reserved Areas}{16}{subsubsection.46}
+\contentsline {subsubsection}{\numberline {2.3.5.7}Placing the Data Bits}{17}{subsubsection.48}
+\contentsline {subsection}{\numberline {2.3.6}Data Masking}{18}{subsection.53}
+\contentsline {subsection}{\numberline {2.3.7}Format and Version Information}{19}{subsection.54}
+\contentsline {subsubsection}{\numberline {2.3.7.1}Generate the Format String}{19}{subsubsection.55}
+\contentsline {chapter}{\numberline {3}Image Processing and Pattern Recognition}{22}{chapter.59}
+\contentsline {section}{\numberline {3.1}Preprocessing}{24}{section.60}
+\contentsline {subsection}{\numberline {3.1.1}Image Transformation}{24}{subsection.61}
+\contentsline {subsection}{\numberline {3.1.2}Median Filtering}{24}{subsection.73}
+\contentsline {section}{\numberline {3.2}Finding and Locating the Finder Patterns}{24}{section.74}
+\contentsline {section}{\numberline {3.3}Finding the Alignment pattern Patterns}{29}{section.143}
+\contentsline {section}{\numberline {3.4}Geometric Modification}{30}{section.173}
+\contentsline {subsection}{\numberline {3.4.1}Perspective transformation}{32}{subsection.229}
+\contentsline {subsection}{\numberline {3.4.2}Crop and QR Pattern Demonstration}{33}{subsection.256}
+\contentsline {chapter}{\numberline {4}Decoding and Message Extraction}{36}{chapter.266}
+\contentsline {section}{\numberline {4.1}Decoding Data and Final Message}{38}{section.267}
+\contentsline {subsection}{\numberline {4.1.1}Version and QR code Matrix}{38}{subsection.279}
+\contentsline {subsection}{\numberline {4.1.2}Format Information Decoding}{38}{subsection.280}
+\contentsline {subsection}{\numberline {4.1.3}Demasking}{39}{subsection.281}
+\contentsline {subsection}{\numberline {4.1.4}Reed-Solomon Decoding}{39}{subsection.282}
+\contentsline {subsection}{\numberline {4.1.5}Message Extraction}{39}{subsection.298}
+\contentsline {chapter}{\numberline {5}Conclusion and Discussion}{42}{chapter.304}
+\contentsline {section}{\numberline {5.1}Speed}{42}{section.305}
+\contentsline {section}{\numberline {5.2}Reliability}{43}{section.307}
+\contentsline {subsection}{\numberline {5.2.1}Error Correction Reliability}{43}{subsection.308}
+\contentsline {subsection}{\numberline {5.2.2}QR Code Pattern Recognition Ability}{43}{subsection.309}
+\contentsline {subsubsection}{\numberline {5.2.2.1}Three Finder Pattern and one Alignment Pattern}{43}{subsubsection.310}
+\contentsline {subsubsection}{\numberline {5.2.2.2}Three Finder Pattern and no Alignment Pattern}{44}{subsubsection.311}
+\contentsline {subsubsection}{\numberline {5.2.2.3}Less Than Three Finder Pattern}{44}{subsubsection.313}
+\contentsline {subsubsection}{\numberline {5.2.2.4}Advantage of Algorithm for Finding the Fourth Corner}{44}{subsubsection.314}
+\contentsline {section}{\numberline {5.3}Limitation of Decoding}{45}{section.315}
+\contentsline {section}{\numberline {5.4}Future work}{45}{section.316}
+\vspace {2em}
+\vspace {2em}
+\contentsline {chapter}{Bibliography}{46}{dummy.317}
