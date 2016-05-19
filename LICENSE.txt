@@ -1,0 +1,23 @@
+%% Digital Image and Video Processing(University of Maryland College Park) - Final Porject(Spring 2015)
+% Developer: Amirsina Torfi(amirsina.torfi@gmail.com)
+% Course Instructor: Professor Min. Wu
+% Course Co-Instructor: Mr. Chau-Wai WONG
+% 
+%  This file is the main file for executing the software. This software get
+%  and image and extract and reconstruct the QR-code within. After Pattern
+%  Recognition the software decode the message within the QR-code and
+%  display it.
+%
+% This software is solely for QR-codes version 1 through 6.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I, Amirsina Torfi, declare that this project titled, "QR code Pattern Recognition and
+Decoding-based Information Extraction" and the work presented in it are my own. I
+confirm that:
+* This work was done wholly or mainly while taking the Image Processing at Uni-
+versity of Maryland in Spring-2015 semester.
+* If any part of this project, whether algorithm or codes, has been extracted from
+any website or other source codes, this has been clearly stated.
+* I have acknowledged all main sources of help.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Individual and not commercial used allowed.

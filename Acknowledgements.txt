@@ -1,0 +1,15 @@
+%% Course: Digital Image and Video Processig --- University of Maryland College Park ---- Spring 2015%%%%%%%%%%%%
+
+This project could not have been performed without the assistance and guidance of several
+individuals. First and foremost, I would like to thank our course instructor,
+Professor Min Wu for her valuable advises. 
+
+I also wanted to appreciate the assistance of the course co-instructor Mr. Chau-Wai WONG(Future Faculty Member) for 
+his useful directions.
+
+I would also like to also thank Mr. Rouzbeh A. Shirvani for helping me through the basic concepts
+in pattern recognition part which was very important to continue the procedure.
+
+It is necessary to mention that the pattern recognition part is inspired from the other
+QR-Code project on Github by Teodor Vik, Oscar Westberg, Mikael Zackrisson and 
+Anton Österblad.
