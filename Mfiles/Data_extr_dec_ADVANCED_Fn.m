@@ -1,0 +1,57 @@
+%%%%%%%%%% Amirsina Torfi ######################
+%%%%%%%%%%% University of Maryland, Colledge Park %%%%%%%%%%%%%%
+%%%%%%%%%% Digital Image and Video Processing %%%%%%%%%%%%%%%%%
+%%% function Data_decode = Data_extr_dec_ADVANCED_Fn(Dec_Str,Error_Recov_Type,module,Block_num,Data_codew_Perb_Num)
+% This function decode each block searately and put them in a sequnce
+
+
+% Inputs :
+           % Dec_Str: Decimal stream for Reed_Solomon Decoding
+
+           
+% Outputs :
+           % Data_decode: decoded decimal sequence
+           
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+function Data_decode = Data_extr_dec_ADVANCED_Fn(Dec_Str,Error_Recov_Type,module,Block_num,Data_codew_Perb_Num)
+Data_decode=[];
+if (module==37 && Error_Recov_Type=='Q')        % According to interleaving pattern
+    
+    for i=1:Block_num/2
+        Data_decode1=Reed_SLM_Decoder(Dec_Str(i,1:15),Dec_Str(i,1+1+15:size(Dec_Str,2)-1));
+        Data_decode=[Data_decode Data_decode1];
+        
+    end
+    for i=Block_num/2+1:Block_num
+        Data_decode1=Reed_SLM_Decoder(Dec_Str(i,1:16),Dec_Str(i,1+1+16:size(Dec_Str,2)));
+        Data_decode=[Data_decode Data_decode1];
+        
+    end
+    
+    
+    
+elseif (module==37 && Error_Recov_Type=='H')
+    
+    for i=1:Block_num/2
+        Data_decode1=Reed_SLM_Decoder(Dec_Str(i,1:11),Dec_Str(i,1+1+11:size(Dec_Str,2)-1));
+        Data_decode=[Data_decode Data_decode1];
+        
+    end
+    for i=Block_num/2+1:Block_num
+        Data_decode1=Reed_SLM_Decoder(Dec_Str(i,1:11),Dec_Str(i,1+1+11:size(Dec_Str,2)));
+        Data_decode=[Data_decode Data_decode1];
+    end
+    
+    
+else
+    
+    for i=1:Block_num
+        Data_decode1=Reed_SLM_Decoder(Dec_Str(i,1:Data_codew_Perb_Num),Dec_Str(i,1+Data_codew_Perb_Num:size(Dec_Str,2)));
+        Data_decode=[Data_decode Data_decode1];
+        
+    end
+    
+end
+

@@ -1,0 +1,50 @@
+function [ Char ] = get_AlphaNum_Fn( Num )
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N 23
+O 24
+P 25
+Q 26
+R 27
+S 28
+T 29
+U 30
+V 31
+W 32
+X 33
+Y 34
+Z 35
+  36 (space)
+$ 37
+% 38
+* 39
++ 40
+- 41
+. 42
+/ 43
+: 44
+
+
+end
+
