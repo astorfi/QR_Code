@@ -70,9 +70,9 @@ If the simulation cannot find more than three finder pattern then it is very dif
 
 The advantage of finding the fourth corner is that is lots of the scenarios we can have a straight image from the pattern whether blurred and noisy or not. Using this method we don't need to have the Alignment Pattern location. It might be less reliable but if there is not any other choice it can be applied.
 
-## Limitation of Decoding
+## How to make contribution
 
-The simulation sometimes fails to decode the version 5-Q and 5-H QR code because of the more complex interleaving pattern of the data and error correction code-words. The author is working on modifying the software to successfully decode 5-Q and 5-H QR codes.
+The simulation sometimes fails to decode the version 5-Q and 5-H QR code because of the more complex interleaving pattern of the data and error correction code-words. The author is working on modifying the software to successfully decode 5-Q and 5-H QR codes and any contribution is more than welcome for that part or any other parts.
 
 ## Future work
 
