@@ -39,7 +39,7 @@ The reliability is based on two important consideration:
 * The first one is that whether the image processing part can extract the correct QR pattern or not?
 * The second one is that is we have the correct pattern of the QR code, whether we can decode it or not?
 
-### Error Correction Reliability}
+### Error Correction Reliability
 The second item related to the number of errors which Reed-Solomon decoder should correct. If the error is more than the maximum ability of the error correction then the message cannot be correctly and fully decoded. Since this part is not the main goal of this project/course so we don't go deep any further in this area.
 
 ### QR Code Pattern Recognition Ability
@@ -83,7 +83,7 @@ Since the version number should be enter by the software executive man another i
 The other issue to finding the alignment pattern. The software should be adapted such that if there is any Alignment pattern it has the reliability to locate that. Basically our software do the job quite well but testing its reliability in deeper sense can improve its efficiency.
 
 
-## Test and Limitations
+## Test
 In order to demonstration of precision and authentication
 of software, different test images have been tested. Note that this project is restricted 
 to QR codes version-1 through version-6.
