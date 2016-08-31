@@ -12,6 +12,8 @@ MATLAB, successfully recognize the main QR pattern and then extract the QR-Matri
 * Then by using decoding techniques, the message is extracted from the QR-code. The
 QR-matrix might be corrupted, i.e. we probably lost some amount of information. 
 According to this scenario, QR-codes are made by Error-Correction Coding which help us
-through the decoding process. In order to demonstration of precision and authentication
+through the decoding process. 
+
+In order to demonstration of precision and authentication
 of software, different test images have been tested. Note that this project is restricted 
 to QR codes version-1 through version-6.
