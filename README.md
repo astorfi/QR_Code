@@ -30,7 +30,7 @@ def = {'2'};
 answer = inputdlg(prompt,dlg_title,num_lines,def);
 [version, ~] = str2num(answer{1});
 module=4*version+17;    % Number of modules(General formula=4*(Version Number)+17)  
-Im = imread('testimage/UMD/Qr-3a.jpg');     % Input image.
+Im = imread('path_to_image');     % Input image.
 ```
 
 ## Test and Limitations
