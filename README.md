@@ -14,6 +14,10 @@ QR-matrix might be corrupted, i.e. we probably lost some amount of information.
 According to this scenario, QR-codes are made by Error-Correction Coding which help us
 through the decoding process. 
 
+## Running the Code and Considerations
+
+Run 'Mfiles/MAIN.m' file.
+
 ## Test and Limitations
 In order to demonstration of precision and authentication
 of software, different test images have been tested. Note that this project is restricted 
