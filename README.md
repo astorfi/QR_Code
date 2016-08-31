@@ -22,7 +22,7 @@ Run **Mfiles/MAIN.m** file. Two things needs to be considered:
 
 The following code of the **MAIN.m** file demonstrates the two aforementioend matter.
 
-'''
+```
 prompt = {'Please input the version:'};
 dlg_title = 'Version';
 num_lines = 1;
@@ -31,7 +31,7 @@ answer = inputdlg(prompt,dlg_title,num_lines,def);
 [version, ~] = str2num(answer{1});
 module=4*version+17;    % Number of modules(General formula=4*(Version Number)+17)  
 Im = imread('testimage/UMD/Qr-3a.jpg');     % Input image.
-'''
+```
 
 ## Test and Limitations
 In order to demonstration of precision and authentication
