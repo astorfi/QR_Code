@@ -20,7 +20,18 @@ Run **Mfiles/MAIN.m** file. Two things needs to be considered:
 * The version of the QR-Code should be known and input by the user although brute-force search can be done by the user too. In other word if the user does not know the version of QR-Code, he/she has to test all the six versions supported by the code by inputing the version number.
 * The other important thing is that, the path of the input image has to be determined by the user.
 
-The following code of the MAIN.m file demonstrates the two aforementioend matter.
+The following code of the **MAIN.m** file demonstrates the two aforementioend matter.
+
+'''
+prompt = {'Please input the version:'};
+dlg_title = 'Version';
+num_lines = 1;
+def = {'2'};
+answer = inputdlg(prompt,dlg_title,num_lines,def);
+[version, ~] = str2num(answer{1});
+module=4*version+17;    % Number of modules(General formula=4*(Version Number)+17)  
+Im = imread('testimage/UMD/Qr-3a.jpg');     % Input image.
+'''
 
 ## Test and Limitations
 In order to demonstration of precision and authentication
