@@ -15,7 +15,7 @@ QR-matrix might be corrupted, i.e. we probably lost some amount of information.
 According to this scenario, QR-codes are made by Error-Correction Coding which help us
 through the decoding process. 
 
-## Running the Code and Considerations
+## Running the Code and Technical Considerations
 
 Run **Mfiles/MAIN.m** file. Two things needs to be considered:
 * The version of the QR-Code should be known and input by the user although brute-force search can be done by the user too. In other word if the user does not know the version of QR-Code, he/she has to test all the six versions supported by the code by inputing the version number.
