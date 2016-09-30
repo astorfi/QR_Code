@@ -1,6 +1,6 @@
 # QR Code Pattern Recognition and Message Extraction
-Webpage:
-http://astorfi.github.io/QR_Code/
+Webpage: http://astorfi.github.io/QR_Code/
+
 ## Introduction
 The goal of this project is to successfully detect and reconstruct perfect QR-code pattern
 and then decode and extract the message and information within. Usually the QR-code
