@@ -18,7 +18,7 @@ through the decoding process.
 ## Running the Code and Technical Considerations
 
 Run **Mfiles/MAIN.m** file. Two things needs to be considered:
-* The version of the QR-Code should be known and input by the user although brute-force search can be done by the user too. In other word if the user does not know the version of QR-Code, he/she has to test all the six versions supported by the code by inputing the version number.
+* The version of the QR-Code should be known and specified by the user although brute-force search can be done by the user too. In other word if the user does not know the version of QR-Code, he/she has to test all the six versions supported by the code by inputing the version number.
 * The other important thing is that, the path of the input image has to be determined by the user.
 
 The following code of the **MAIN.m** file demonstrates the two aforementioend matter.
