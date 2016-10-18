@@ -14,11 +14,14 @@ In this situation robust algorithms can effectively recognize
 specic patterns in the image and reconstruct the main matrix of quick response code.
 The project has two main part:
 * In the first part of this project the implemented software, which is developed using
-MATLAB, successfully recognize the main QR pattern and then extract the QR-Matrix.
+MATLAB, successfully recognize the main QR pattern and then extract the QR-Matrix. Here's an example of performing this phase:
+![](Images/QRreconstructed.jpg).
+
 * Then by using decoding techniques, the message is extracted from the QR-code. The
 QR-matrix might be corrupted, i.e. we probably lost some amount of information. 
 According to this scenario, QR-codes are made by Error-Correction Coding which help us
-through the decoding process. 
+through the decoding process. As an example a sample final output depicted in the following image:
+![](Images/QRdecoded.jpg).
 
 ## Running the Code and Technical Considerations
 
