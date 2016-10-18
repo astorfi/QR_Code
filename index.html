@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Qr code by astorfi</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Qr code</h1>
+        <p class="header">QR Code Pattern Recognition and Message Extraction</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/astorfi/QR_Code/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/astorfi/QR_Code/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/astorfi/QR_Code">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/astorfi">astorfi</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a id="qr-code-pattern-recognition-and-message-extraction" class="anchor" href="#qr-code-pattern-recognition-and-message-extraction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>QR Code Pattern Recognition and Message Extraction</h1>
+
+<p>Webpage: <a href="http://astorfi.github.io/QR_Code/">http://astorfi.github.io/QR_Code/</a></p>
+
+<h2>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>The goal of this project is to successfully detect and reconstruct perfect QR-code pattern
+and then decode and extract the message and information within. Usually the QR-code
+images are corrupted, Blurred or at least rotated which make the pattern recognition
+harder than simple scenarios. The following image, demonstrates a damaged QR-Code: </p>
+
+<p><img src="images/QR_eg_WikiMobile.jpg" alt="">.</p>
+
+<p>In this situation robust algorithms can effectively recognize
+specic patterns in the image and reconstruct the main matrix of quick response code.
+The project has two main part:</p>
+
+<ul>
+<li><p>In the first part of this project the implemented software, which is developed using
+MATLAB, successfully recognize the main QR pattern and then extract the QR-Matrix. Here's an example of performing this phase:
+<img src="images/QRreconstructed.jpg" alt="">.</p></li>
+<li><p>Then by using decoding techniques, the message is extracted from the QR-code. The
+QR-matrix might be corrupted, i.e. we probably lost some amount of information. 
+According to this scenario, QR-codes are made by Error-Correction Coding which help us
+through the decoding process. As an example a sample final output depicted in the following image:
+<img src="images/QRdecoded.jpg" alt="">.</p></li>
+</ul>
+
+<h2>
+<a id="running-the-code-and-technical-considerations" class="anchor" href="#running-the-code-and-technical-considerations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running the Code and Technical Considerations</h2>
+
+<p>Run <strong>Mfiles/MAIN.m</strong> file. Two things needs to be considered:</p>
+
+<ul>
+<li>The version of the QR-Code should be known and specified by the user although brute-force search can be done by the user too. In other word if the user does not know the version of QR-Code, he/she has to test all the six versions supported by the code by inputting the version number.</li>
+<li>The other important thing is that, the path of the input image has to be determined by the user.</li>
+</ul>
+
+<p>The following code of the <strong>MAIN.m</strong> file demonstrates the two aforementioned matter.</p>
+
+<pre><code>prompt = {'Please input the version:'};
+dlg_title = 'Version';
+num_lines = 1;
+def = {'2'};
+answer = inputdlg(prompt,dlg_title,num_lines,def);
+[version, ~] = str2num(answer{1});
+module=4*version+17;    % Number of modules(General formula=4*(Version Number)+17)  
+Im = imread('path_to_image');     % Input image.
+</code></pre>
+
+<h2>
+<a id="reliability" class="anchor" href="#reliability" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reliability</h2>
+
+<p>The reliability is based on two important consideration:</p>
+
+<ul>
+<li>The first one is that whether the image processing part can extract the correct QR pattern or not?</li>
+<li>The second one is that is we have the correct pattern of the QR code, whether we can decode it or not?</li>
+</ul>
+
+<h3>
+<a id="error-correction-reliability" class="anchor" href="#error-correction-reliability" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Error Correction Reliability</h3>
+
+<p>The second item related to the number of errors which Reed-Solomon decoder should correct. If the error is more than the maximum ability of the error correction then the message cannot be correctly and fully decoded. Since this part is not the main goal of this project/course so we don't go deep any further in this area.</p>
+
+<h3>
+<a id="qr-code-pattern-recognition-ability" class="anchor" href="#qr-code-pattern-recognition-ability" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>QR Code Pattern Recognition Ability</h3>
+
+<p>There is different scenarios and different approaches to overcome the deficiencies. We investigate them from the easy to the worst case scenario.</p>
+
+<h4>
+<a id="three-finder-pattern-and-one-alignment-pattern" class="anchor" href="#three-finder-pattern-and-one-alignment-pattern" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Three Finder Pattern and one Alignment Pattern</h4>
+
+<p>Suppose that we have a clear image and straight point of view. This is the easiest scenario. We believe that the software can easily detect the finder patterns and alignment pattern and the QR code reconstruction would be easy. In other scenarios even if the image is blurred or damaged, if we can find this 4-points, then we can perfectly reconstruct the QR code.</p>
+
+<h4>
+<a id="limitation" class="anchor" href="#limitation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Limitation</h4>
+
+<p>The caveat is that what if the simulation finds a wrong alignment pattern or finder patter? The answer is according to the characteristics of the finder patter it is very unlikely to find a wrong finder pattern. The software has been tested for wide variety of images. The problem is that it is likely for software to find a point as the Alignment Pattern while it is not!! The reason that we have add another diagonal ration search for AP candidates is to prevent this phenomenon and by testing different test images we conclude that the developed software is reliable to that even.</p>
+
+<h4>
+<a id="three-finder-pattern-and-no-alignment-pattern" class="anchor" href="#three-finder-pattern-and-no-alignment-pattern" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Three Finder Pattern and no Alignment Pattern</h4>
+
+<p>Sometimes the software cannot find the AP because there might be no AP in a damaged image or there is but the software cannot be find the Alignment Pattern. The former has no solution for finding AP but for the later we can allow more error in searching for the alignment pattern. This ability is defined in the software. </p>
+
+<h4>
+<a id="limitation-1" class="anchor" href="#limitation-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Limitation</h4>
+
+<p>The caveat is that allowing more error might lead to finding an Alignment Pattern which is not the correct one. The final solution for that which prevent this issue is that if the software cannot detect AP then ignore it and use the last corner of the QR-Code as the fourth point for perspective transformation. But the previous algorithm that we developed for this task was not very precise because if the image is not from straight point of view the if the looking angle is far from 90 even by 20 degree, then the software fail to find the fourth corner of the QR-Code\footnote{Fourth corner refers to the corner which is not connected to any of three finder patterns} pattern. In better words it finds something which is not the correct one. The last algorithm that we implemented for this issue is to find two candidates for the fourth corner and using the average. According to the test images that we used for this algorithm, it is more efficient than the previous one.</p>
+
+<h4>
+<a id="less-than-three-finder-pattern" class="anchor" href="#less-than-three-finder-pattern" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Less Than Three Finder Pattern</h4>
+
+<p>If the simulation cannot find more than three finder pattern then it is very difficult to tackle this problem. It may happen in very rare scenarios which the image is very blurred and almost the pattern cannot be scene. The solution is to use different thresholding in order to find and locate the finder patterns and separators. In this scenario we try the previous approach for finding the fourth corner of QR code and try to reconstruct the pattern.</p>
+
+<h4>
+<a id="advantage-of-algorithm-for-finding-the-fourth-corner" class="anchor" href="#advantage-of-algorithm-for-finding-the-fourth-corner" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advantage of Algorithm for Finding the Fourth Corner</h4>
+
+<p>The advantage of finding the fourth corner is that is lots of the scenarios we can have a straight image from the pattern whether blurred and noisy or not. Using this method we don't need to have the Alignment Pattern location. It might be less reliable but if there is not any other choice it can be applied.</p>
+
+<h2>
+<a id="how-to-make-contribution" class="anchor" href="#how-to-make-contribution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to make contribution</h2>
+
+<p>The simulation sometimes fails to decode the version 5-Q and 5-H QR code because of the more complex interleaving pattern of the data and error correction code-words. The author is working on modifying the software to successfully decode 5-Q and 5-H QR codes and any contribution is more than welcome for that part or any other parts.</p>
+
+<h2>
+<a id="future-work" class="anchor" href="#future-work" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Future work</h2>
+
+<p>Since this project is only considering the version 1 through 6 then an interesting extend to this project can be modifying software for having correct results for higher versions.</p>
+
+<p>Since the version number should be enter by the software executive man another interesting extend can be developing a software to automatically detect the version of QR-Code which is a practical task and can be well implemented in real life applications.</p>
+
+<p>The other issue to finding the alignment pattern. The software should be adapted such that if there is any Alignment pattern it has the reliability to locate that. Basically our software do the job quite well but testing its reliability in deeper sense can improve its efficiency.</p>
+
+<h2>
+<a id="test" class="anchor" href="#test" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test</h2>
+
+<p>In order to demonstration of precision and authentication
+of software, different test images have been tested. Note that this project is restricted 
+to QR codes version-1 through version-6.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
