@@ -5,7 +5,12 @@ Webpage: http://astorfi.github.io/QR_Code/
 The goal of this project is to successfully detect and reconstruct perfect QR-code pattern
 and then decode and extract the message and information within. Usually the QR-code
 images are corrupted, Blurred or at least rotated which make the pattern recognition
-harder than simple scenarios. In this situation robust algorithms can effectively recognize
+harder than simple scenarios. The following image, demonstrates a damaged QR-Code:
+
+
+
+
+In this situation robust algorithms can effectively recognize
 specic patterns in the image and reconstruct the main matrix of quick response code.
 The project has two main part:
 * In the first part of this project the implemented software, which is developed using
